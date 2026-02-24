@@ -1,0 +1,224 @@
+<svg viewBox="0 0 900 1100" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', monospace">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#0d1220"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="cpGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0e2a1e"/>
+      <stop offset="100%" stop-color="#0a2416"/>
+    </linearGradient>
+    <linearGradient id="inputGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a1040"/>
+      <stop offset="100%" stop-color="#150d35"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-strong">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00d4aa"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ff4444"/>
+    </marker>
+    <marker id="arrow-yellow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f59e0b"/>
+    </marker>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ffffff" stroke-opacity="0.025" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="1100" fill="url(#bgGrad)"/>
+  <rect width="900" height="1100" fill="url(#grid)"/>
+
+  <!-- Subtle border -->
+  <rect x="1" y="1" width="898" height="1098" fill="none" stroke="#00d4aa" stroke-opacity="0.15" stroke-width="1"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="900" height="56" fill="#00d4aa" fill-opacity="0.07"/>
+  <line x1="0" y1="56" x2="900" y2="56" stroke="#00d4aa" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="32" y="22" fill="#00d4aa" font-size="10" font-weight="bold" opacity="0.6" letter-spacing="3">SYSTEM ARCHITECTURE</text>
+  <text x="32" y="42" fill="#ffffff" font-size="16" font-weight="bold" letter-spacing="1">AI GOVERNANCE — DATA FLOW</text>
+  <text x="820" y="35" fill="#00d4aa" font-size="9" opacity="0.5" text-anchor="middle">v2.1 / PROD</text>
+
+  <!-- ====== USER INPUT NODE ====== -->
+  <rect x="280" y="76" width="340" height="60" rx="4" fill="url(#inputGrad)" stroke="#7c6af0" stroke-width="1.5"/>
+  <rect x="280" y="76" width="6" height="60" rx="2" fill="#7c6af0"/>
+  <text x="310" y="99" fill="#a78bfa" font-size="9" font-weight="bold" letter-spacing="2">ENTRY POINT</text>
+  <text x="310" y="118" fill="#ffffff" font-size="13" font-weight="bold">USER INPUT</text>
+  <text x="580" y="99" fill="#7c6af0" font-size="8" text-anchor="end" opacity="0.7">API · PROMPT · FILE · VOICE</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="136" x2="450" y2="158" stroke="#00d4aa" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ====== CP-1 ====== -->
+  <rect x="180" y="160" width="540" height="70" rx="4" fill="url(#cpGrad)" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="180" y="160" width="6" height="70" rx="2" fill="#00d4aa"/>
+  <rect x="680" y="168" width="32" height="18" rx="2" fill="#00d4aa" fill-opacity="0.2" stroke="#00d4aa" stroke-width="0.8"/>
+  <text x="696" y="180" fill="#00d4aa" font-size="8" font-weight="bold" text-anchor="middle">CP-1</text>
+  <text x="205" y="181" fill="#00d4aa" font-size="9" font-weight="bold" letter-spacing="2">CONTROL POINT 1</text>
+  <text x="205" y="200" fill="#ffffff" font-size="12" font-weight="bold">INPUT GUARDRAIL ENGINE</text>
+  <text x="205" y="218" fill="#6b7280" font-size="9">Schema Validation · Injection Detection · PII Classifier · Rate Limiter · Auth Verify</text>
+  <!-- Side threat indicator -->
+  <line x1="720" y1="195" x2="770" y2="195" stroke="#ff4444" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow-red)"/>
+  <text x="775" y="191" fill="#ff4444" font-size="8">INJECTION</text>
+  <text x="775" y="201" fill="#ff4444" font-size="8">JAILBREAK</text>
+
+  <line x1="450" y1="230" x2="450" y2="252" stroke="#00d4aa" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ====== CP-2 ====== -->
+  <rect x="180" y="254" width="540" height="70" rx="4" fill="url(#cpGrad)" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="180" y="254" width="6" height="70" rx="2" fill="#00d4aa"/>
+  <rect x="680" y="262" width="32" height="18" rx="2" fill="#00d4aa" fill-opacity="0.2" stroke="#00d4aa" stroke-width="0.8"/>
+  <text x="696" y="274" fill="#00d4aa" font-size="8" font-weight="bold" text-anchor="middle">CP-2</text>
+  <text x="205" y="275" fill="#00d4aa" font-size="9" font-weight="bold" letter-spacing="2">CONTROL POINT 2</text>
+  <text x="205" y="294" fill="#ffffff" font-size="12" font-weight="bold">CONTEXT AGGREGATION  (RAG / API)</text>
+  <text x="205" y="312" fill="#6b7280" font-size="9">Vector Store · External APIs · Source Provenance Tracking · Trust Scoring per Chunk</text>
+  <!-- External data source boxes -->
+  <rect x="45" y="270" width="80" height="22" rx="3" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="85" y="284" fill="#9ca3af" font-size="8" text-anchor="middle">VECTOR STORE</text>
+  <rect x="45" y="298" width="80" height="22" rx="3" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="85" y="312" fill="#9ca3af" font-size="8" text-anchor="middle">EXTERNAL API</text>
+  <line x1="125" y1="281" x2="180" y2="281" stroke="#374151" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-yellow)"/>
+  <line x1="125" y1="309" x2="180" y2="309" stroke="#374151" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-yellow)"/>
+  <line x1="720" y1="289" x2="770" y2="289" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow-yellow)"/>
+  <text x="775" y="285" fill="#f59e0b" font-size="8">CONTEXT</text>
+  <text x="775" y="295" fill="#f59e0b" font-size="8">POISONING</text>
+
+  <line x1="450" y1="324" x2="450" y2="346" stroke="#00d4aa" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ====== CP-3 ====== -->
+  <rect x="180" y="348" width="540" height="70" rx="4" fill="url(#cpGrad)" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="180" y="348" width="6" height="70" rx="2" fill="#00d4aa"/>
+  <rect x="680" y="356" width="32" height="18" rx="2" fill="#00d4aa" fill-opacity="0.2" stroke="#00d4aa" stroke-width="0.8"/>
+  <text x="696" y="368" fill="#00d4aa" font-size="8" font-weight="bold" text-anchor="middle">CP-3</text>
+  <text x="205" y="369" fill="#00d4aa" font-size="9" font-weight="bold" letter-spacing="2">CONTROL POINT 3</text>
+  <text x="205" y="388" fill="#ffffff" font-size="12" font-weight="bold">POLICY INJECTION LAYER</text>
+  <text x="205" y="406" fill="#6b7280" font-size="9">System Prompt Assembly · Constraint Injection · Role &amp; Scope Enforcement</text>
+
+  <line x1="450" y1="418" x2="450" y2="440" stroke="#00d4aa" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ====== CP-4 MODEL INFERENCE ====== -->
+  <rect x="180" y="442" width="540" height="74" rx="4" fill="#12101f" stroke="#7c6af0" stroke-width="2"/>
+  <rect x="180" y="442" width="6" height="74" rx="2" fill="#7c6af0"/>
+  <rect x="680" y="450" width="32" height="18" rx="2" fill="#7c6af0" fill-opacity="0.2" stroke="#7c6af0" stroke-width="0.8"/>
+  <text x="696" y="462" fill="#a78bfa" font-size="8" font-weight="bold" text-anchor="middle">CP-4</text>
+  <text x="205" y="463" fill="#a78bfa" font-size="9" font-weight="bold" letter-spacing="2">INFERENCE ENGINE</text>
+  <text x="205" y="482" fill="#ffffff" font-size="14" font-weight="bold">MODEL INFERENCE</text>
+  <text x="205" y="500" fill="#6b7280" font-size="9">Token Generation · Tool Call Planning · Confidence Scoring · Behavioral Boundaries</text>
+  <!-- model chip graphic -->
+  <rect x="570" y="450" width="50" height="50" rx="3" fill="#1e1b4b" stroke="#7c6af0" stroke-width="1"/>
+  <rect x="577" y="457" width="36" height="36" rx="2" fill="#2d2b5e" stroke="#7c6af0" stroke-width="0.5"/>
+  <text x="595" y="476" fill="#a78bfa" font-size="8" text-anchor="middle">LLM</text>
+  <text x="595" y="488" fill="#7c6af0" font-size="6" text-anchor="middle">INFERENCE</text>
+  <line x1="720" y1="479" x2="770" y2="479" stroke="#ff4444" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow-red)"/>
+  <text x="775" y="475" fill="#ff4444" font-size="8">FINE-TUNE</text>
+  <text x="775" y="485" fill="#ff4444" font-size="8">DRIFT</text>
+
+  <line x1="450" y1="516" x2="450" y2="538" stroke="#00d4aa" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ====== CP-5 TOOL GATEWAY ====== -->
+  <rect x="180" y="540" width="540" height="70" rx="4" fill="url(#cpGrad)" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="180" y="540" width="6" height="70" rx="2" fill="#00d4aa"/>
+  <rect x="680" y="548" width="32" height="18" rx="2" fill="#00d4aa" fill-opacity="0.2" stroke="#00d4aa" stroke-width="0.8"/>
+  <text x="696" y="560" fill="#00d4aa" font-size="8" font-weight="bold" text-anchor="middle">CP-5</text>
+  <text x="205" y="561" fill="#00d4aa" font-size="9" font-weight="bold" letter-spacing="2">CONTROL POINT 5</text>
+  <text x="205" y="580" fill="#ffffff" font-size="12" font-weight="bold">TOOL INVOCATION GATEWAY</text>
+  <text x="205" y="598" fill="#6b7280" font-size="9">Permission Gating · Scoped Credentials · Param Validation · Human Approval Gate</text>
+  <!-- External tools -->
+  <rect x="45" y="554" width="80" height="22" rx="3" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="85" y="568" fill="#9ca3af" font-size="8" text-anchor="middle">PLUGINS/FUNCTIONS</text>
+  <rect x="45" y="582" width="80" height="22" rx="3" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="85" y="596" fill="#9ca3af" font-size="8" text-anchor="middle">EXTERNAL SYSTEMS</text>
+  <line x1="125" y1="565" x2="180" y2="565" stroke="#374151" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-yellow)"/>
+  <line x1="125" y1="593" x2="180" y2="593" stroke="#374151" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-yellow)"/>
+  <line x1="720" y1="575" x2="770" y2="575" stroke="#ff4444" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow-red)"/>
+  <text x="775" y="571" fill="#ff4444" font-size="8">PRIV</text>
+  <text x="775" y="581" fill="#ff4444" font-size="8">ESCALATION</text>
+
+  <line x1="450" y1="610" x2="450" y2="632" stroke="#00d4aa" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ====== CP-6 OUTPUT SANITIZATION ====== -->
+  <rect x="180" y="634" width="540" height="70" rx="4" fill="url(#cpGrad)" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="180" y="634" width="6" height="70" rx="2" fill="#00d4aa"/>
+  <rect x="680" y="642" width="32" height="18" rx="2" fill="#00d4aa" fill-opacity="0.2" stroke="#00d4aa" stroke-width="0.8"/>
+  <text x="696" y="654" fill="#00d4aa" font-size="8" font-weight="bold" text-anchor="middle">CP-6</text>
+  <text x="205" y="655" fill="#00d4aa" font-size="9" font-weight="bold" letter-spacing="2">CONTROL POINT 6</text>
+  <text x="205" y="674" fill="#ffffff" font-size="12" font-weight="bold">OUTPUT SANITIZATION</text>
+  <text x="205" y="692" fill="#6b7280" font-size="9">PII/PHI Redaction · Exfiltration Pattern Detection · Schema Validation · Classification</text>
+  <line x1="720" y1="669" x2="770" y2="669" stroke="#ff4444" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow-red)"/>
+  <text x="775" y="665" fill="#ff4444" font-size="8">DATA</text>
+  <text x="775" y="675" fill="#ff4444" font-size="8">EXFILTRATION</text>
+
+  <line x1="450" y1="704" x2="450" y2="726" stroke="#00d4aa" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ====== CP-7 LOGGING ====== -->
+  <rect x="180" y="728" width="540" height="70" rx="4" fill="url(#cpGrad)" stroke="#00d4aa" stroke-width="1.5"/>
+  <rect x="180" y="728" width="6" height="70" rx="2" fill="#00d4aa"/>
+  <rect x="680" y="736" width="32" height="18" rx="2" fill="#00d4aa" fill-opacity="0.2" stroke="#00d4aa" stroke-width="0.8"/>
+  <text x="696" y="748" fill="#00d4aa" font-size="8" font-weight="bold" text-anchor="middle">CP-7</text>
+  <text x="205" y="749" fill="#00d4aa" font-size="9" font-weight="bold" letter-spacing="2">CONTROL POINT 7</text>
+  <text x="205" y="768" fill="#ffffff" font-size="12" font-weight="bold">LOGGING &amp; TELEMETRY</text>
+  <text x="205" y="786" fill="#6b7280" font-size="9">Full Capture · Risk Score Record · Anomaly Flagging · Immutable Audit Trail · Alerting</text>
+
+  <line x1="450" y1="798" x2="450" y2="820" stroke="#00d4aa" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ====== CP-8 FEEDBACK ====== -->
+  <rect x="180" y="822" width="540" height="70" rx="4" fill="#0f1d2e" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="180" y="822" width="6" height="70" rx="2" fill="#3b82f6"/>
+  <rect x="680" y="830" width="32" height="18" rx="2" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="0.8"/>
+  <text x="696" y="842" fill="#60a5fa" font-size="8" font-weight="bold" text-anchor="middle">CP-8</text>
+  <text x="205" y="843" fill="#60a5fa" font-size="9" font-weight="bold" letter-spacing="2">FEEDBACK LOOP</text>
+  <text x="205" y="862" fill="#ffffff" font-size="12" font-weight="bold">HUMAN FEEDBACK / RETRAINING</text>
+  <text x="205" y="880" fill="#6b7280" font-size="9">Reviewer Queue · Override Capture · Dataset Curation · Behavioral Regression Testing</text>
+  <!-- Feedback arrow back up -->
+  <path d="M 160 857 Q 40 857 40 479 Q 40 100 280 100" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-yellow)" opacity="0.5"/>
+  <text x="22" y="500" fill="#3b82f6" font-size="8" opacity="0.6" transform="rotate(-90, 22, 500)">RETRAINING LOOP</text>
+
+  <!-- ====== LEGEND ====== -->
+  <rect x="32" y="930" width="836" height="140" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+  <text x="48" y="950" fill="#6b7280" font-size="9" font-weight="bold" letter-spacing="3">LEGEND</text>
+  <!-- Control flow -->
+  <line x1="48" y1="968" x2="88" y2="968" stroke="#00d4aa" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="96" y="972" fill="#9ca3af" font-size="9">Governed Data Flow</text>
+  <!-- Threat vector -->
+  <line x1="48" y1="988" x2="88" y2="988" stroke="#ff4444" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow-red)"/>
+  <text x="96" y="992" fill="#9ca3af" font-size="9">Threat Vector / Attack Class</text>
+  <!-- External input -->
+  <line x1="48" y1="1008" x2="88" y2="1008" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-yellow)"/>
+  <text x="96" y="1012" fill="#9ca3af" font-size="9">External Data Input</text>
+  <!-- Feedback loop -->
+  <line x1="48" y1="1028" x2="88" y2="1028" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="96" y="1032" fill="#9ca3af" font-size="9">Retraining Feedback Loop</text>
+
+  <!-- color chips -->
+  <rect x="310" y="958" width="10" height="10" rx="2" fill="#00d4aa"/>
+  <text x="326" y="968" fill="#9ca3af" font-size="9">Governance Control Point (CPn)</text>
+  <rect x="310" y="978" width="10" height="10" rx="2" fill="#7c6af0"/>
+  <text x="326" y="988" fill="#9ca3af" font-size="9">Inference Engine Node</text>
+  <rect x="310" y="998" width="10" height="10" rx="2" fill="#3b82f6"/>
+  <text x="326" y="1008" fill="#9ca3af" font-size="9">Human-in-the-Loop Stage</text>
+  <rect x="310" y="1018" width="10" height="10" rx="2" fill="#374151"/>
+  <text x="326" y="1028" fill="#9ca3af" font-size="9">External System / Data Source</text>
+
+  <text x="580" y="970" fill="#6b7280" font-size="8">Each CP-N operates independently.</text>
+  <text x="580" y="984" fill="#6b7280" font-size="8">Bypass at CP-1 does not disable</text>
+  <text x="580" y="998" fill="#6b7280" font-size="8">enforcement at CP-2 through CP-7.</text>
+  <text x="580" y="1016" fill="#374151" font-size="8">— Defense-in-depth principle</text>
+
+  <!-- Footer -->
+  <line x1="0" y1="1082" x2="900" y2="1082" stroke="#00d4aa" stroke-opacity="0.15" stroke-width="1"/>
+  <text x="32" y="1095" fill="#374151" font-size="8">AI GOVERNANCE FRAMEWORK · DATA FLOW ARCHITECTURE</text>
+  <text x="868" y="1095" fill="#374151" font-size="8" text-anchor="end">fig. 1 of 3</text>
+</svg>

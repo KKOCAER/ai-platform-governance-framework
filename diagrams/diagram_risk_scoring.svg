@@ -1,0 +1,243 @@
+<svg viewBox="0 0 1000 860" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', monospace">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#0d1220"/>
+    </linearGradient>
+    <linearGradient id="formulaGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0e2a1e"/>
+      <stop offset="100%" stop-color="#091a12"/>
+    </linearGradient>
+    <linearGradient id="scoreBarRed" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7f1d1d"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="scoreBarYellow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="scoreBarGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="glow3">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="a-grn" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00d4aa"/>
+    </marker>
+    <marker id="a-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ef4444"/>
+    </marker>
+    <marker id="a-yel" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="a-blu" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#60a5fa"/>
+    </marker>
+    <pattern id="grid3" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ffffff" stroke-opacity="0.02" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="860" fill="url(#bg3)"/>
+  <rect width="1000" height="860" fill="url(#grid3)"/>
+  <rect x="1" y="1" width="998" height="858" fill="none" stroke="#00d4aa" stroke-opacity="0.12" stroke-width="1"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1000" height="56" fill="#00d4aa" fill-opacity="0.06"/>
+  <line x1="0" y1="56" x2="1000" y2="56" stroke="#00d4aa" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="32" y="22" fill="#00d4aa" font-size="10" font-weight="bold" opacity="0.6" letter-spacing="3">QUANTITATIVE GOVERNANCE</text>
+  <text x="32" y="42" fill="#ffffff" font-size="16" font-weight="bold" letter-spacing="1">RISK SCORING — COMPONENT INTERACTIONS</text>
+  <text x="920" y="35" fill="#00d4aa" font-size="9" opacity="0.5" text-anchor="middle">v2.1 / PROD</text>
+
+  <!-- ====== FORMULA SECTION ====== -->
+  <rect x="20" y="70" width="960" height="100" rx="5" fill="url(#formulaGrad)" stroke="#00d4aa" stroke-width="1.2" stroke-opacity="0.5"/>
+  <text x="40" y="92" fill="#00d4aa" font-size="9" font-weight="bold" letter-spacing="3" opacity="0.7">STAGE-LEVEL FORMULA</text>
+  <text x="500" y="120" fill="#ffffff" font-size="18" font-weight="bold" text-anchor="middle" letter-spacing="1">Risk_stage = Impact × Exploitability × Autonomy_Level × Data_Sensitivity</text>
+
+  <!-- variable pills -->
+  <rect x="80" y="135" width="100" height="22" rx="11" fill="#1a0a0a" stroke="#ef4444" stroke-width="1"/>
+  <text x="130" y="149" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">IMPACT  (1–5)</text>
+  <rect x="210" y="135" width="130" height="22" rx="11" fill="#1a120a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="275" y="149" fill="#f59e0b" font-size="8" font-weight="bold" text-anchor="middle">EXPLOITABILITY  (1–5)</text>
+  <rect x="370" y="135" width="140" height="22" rx="11" fill="#0a120a" stroke="#10b981" stroke-width="1"/>
+  <text x="440" y="149" fill="#10b981" font-size="8" font-weight="bold" text-anchor="middle">AUTONOMY LEVEL  (1–5)</text>
+  <rect x="540" y="135" width="140" height="22" rx="11" fill="#0a0e1a" stroke="#60a5fa" stroke-width="1"/>
+  <text x="610" y="149" fill="#60a5fa" font-size="8" font-weight="bold" text-anchor="middle">DATA SENSITIVITY  (1–5)</text>
+  <text x="730" y="149" fill="#374151" font-size="8">= stage risk weight</text>
+  <text x="830" y="149" fill="#4b5563" font-size="8">max = 625</text>
+
+  <!-- ====== STAGE SCORE BREAKDOWN ====== -->
+  <text x="40" y="196" fill="#6b7280" font-size="9" font-weight="bold" letter-spacing="3">STAGE RISK BREAKDOWN</text>
+
+  <!-- Column headers -->
+  <text x="42" y="218" fill="#4b5563" font-size="8">STAGE</text>
+  <text x="230" y="218" fill="#ef4444" font-size="8">IMP</text>
+  <text x="278" y="218" fill="#f59e0b" font-size="8">EXP</text>
+  <text x="326" y="218" fill="#10b981" font-size="8">AUT</text>
+  <text x="374" y="218" fill="#60a5fa" font-size="8">DAT</text>
+  <text x="430" y="218" fill="#9ca3af" font-size="8">SCORE</text>
+  <text x="510" y="218" fill="#9ca3af" font-size="8">RISK WEIGHT VISUALIZATION</text>
+  <line x1="30" y1="222" x2="970" y2="222" stroke="#1f2937" stroke-width="0.5"/>
+
+  <!-- Row helper -->
+  <!-- Row 1: Input Guardrail – score 24 -->
+  <rect x="30" y="226" width="940" height="28" rx="2" fill="#111827" fill-opacity="0.4"/>
+  <text x="42" y="244" fill="#9ca3af" font-size="9">CP-1  Input Guardrail</text>
+  <text x="230" y="244" fill="#ef4444" font-size="9" font-weight="bold">3</text>
+  <text x="278" y="244" fill="#f59e0b" font-size="9" font-weight="bold">4</text>
+  <text x="326" y="244" fill="#10b981" font-size="9" font-weight="bold">1</text>
+  <text x="374" y="244" fill="#60a5fa" font-size="9" font-weight="bold">2</text>
+  <text x="420" y="244" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="end">24</text>
+  <rect x="510" y="231" width="38" height="14" rx="2" fill="url(#scoreBarGreen)"/>
+  <text x="554" y="242" fill="#6b7280" font-size="7">  4%</text>
+
+  <!-- Row 2: Context Aggregation – 96 -->
+  <rect x="30" y="256" width="940" height="28" rx="2" fill="#111827" fill-opacity="0.2"/>
+  <text x="42" y="274" fill="#9ca3af" font-size="9">CP-2  Context Aggregation</text>
+  <text x="230" y="274" fill="#ef4444" font-size="9" font-weight="bold">4</text>
+  <text x="278" y="274" fill="#f59e0b" font-size="9" font-weight="bold">3</text>
+  <text x="326" y="274" fill="#10b981" font-size="9" font-weight="bold">2</text>
+  <text x="374" y="274" fill="#60a5fa" font-size="9" font-weight="bold">4</text>
+  <text x="420" y="274" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="end">96</text>
+  <rect x="510" y="261" width="154" height="14" rx="2" fill="url(#scoreBarYellow)"/>
+  <text x="670" y="272" fill="#6b7280" font-size="7">  15%</text>
+
+  <!-- Row 3: Policy Injection – 30 -->
+  <rect x="30" y="286" width="940" height="28" rx="2" fill="#111827" fill-opacity="0.4"/>
+  <text x="42" y="304" fill="#9ca3af" font-size="9">CP-3  Policy Injection</text>
+  <text x="230" y="304" fill="#ef4444" font-size="9" font-weight="bold">5</text>
+  <text x="278" y="304" fill="#f59e0b" font-size="9" font-weight="bold">2</text>
+  <text x="326" y="304" fill="#10b981" font-size="9" font-weight="bold">1</text>
+  <text x="374" y="304" fill="#60a5fa" font-size="9" font-weight="bold">3</text>
+  <text x="420" y="304" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="end">30</text>
+  <rect x="510" y="291" width="48" height="14" rx="2" fill="url(#scoreBarGreen)"/>
+  <text x="564" y="302" fill="#6b7280" font-size="7">  5%</text>
+
+  <!-- Row 4: Model Inference – 108 -->
+  <rect x="30" y="316" width="940" height="28" rx="2" fill="#111827" fill-opacity="0.2"/>
+  <text x="42" y="334" fill="#9ca3af" font-size="9">CP-4  Model Inference</text>
+  <text x="230" y="334" fill="#ef4444" font-size="9" font-weight="bold">4</text>
+  <text x="278" y="334" fill="#f59e0b" font-size="9" font-weight="bold">3</text>
+  <text x="326" y="334" fill="#10b981" font-size="9" font-weight="bold">3</text>
+  <text x="374" y="334" fill="#60a5fa" font-size="9" font-weight="bold">3</text>
+  <text x="420" y="334" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="end">108</text>
+  <rect x="510" y="321" width="173" height="14" rx="2" fill="url(#scoreBarYellow)"/>
+  <text x="689" y="332" fill="#6b7280" font-size="7">  17%</text>
+
+  <!-- Row 5: Tool Invocation – 240 – CRITICAL -->
+  <rect x="30" y="346" width="940" height="28" rx="2" fill="#2a0a0a" fill-opacity="0.6"/>
+  <text x="42" y="364" fill="#fca5a5" font-size="9" font-weight="bold">CP-5  Tool Invocation Gateway</text>
+  <text x="230" y="364" fill="#ef4444" font-size="9" font-weight="bold">5</text>
+  <text x="278" y="364" fill="#f59e0b" font-size="9" font-weight="bold">3</text>
+  <text x="326" y="364" fill="#10b981" font-size="9" font-weight="bold">4</text>
+  <text x="374" y="364" fill="#60a5fa" font-size="9" font-weight="bold">4</text>
+  <text x="420" y="364" fill="#ef4444" font-size="11" font-weight="bold" text-anchor="end">240</text>
+  <rect x="510" y="351" width="384" height="14" rx="2" fill="url(#scoreBarRed)"/>
+  <text x="900" y="362" fill="#ef4444" font-size="7" font-weight="bold">⚠ CRITICAL  38%</text>
+
+  <!-- Row 6: Output Sanitization – 40 -->
+  <rect x="30" y="376" width="940" height="28" rx="2" fill="#111827" fill-opacity="0.4"/>
+  <text x="42" y="394" fill="#9ca3af" font-size="9">CP-6  Output Sanitization</text>
+  <text x="230" y="394" fill="#ef4444" font-size="9" font-weight="bold">4</text>
+  <text x="278" y="394" fill="#f59e0b" font-size="9" font-weight="bold">2</text>
+  <text x="326" y="394" fill="#10b981" font-size="9" font-weight="bold">1</text>
+  <text x="374" y="394" fill="#60a5fa" font-size="9" font-weight="bold">5</text>
+  <text x="420" y="394" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="end">40</text>
+  <rect x="510" y="381" width="64" height="14" rx="2" fill="url(#scoreBarGreen)"/>
+  <text x="580" y="392" fill="#6b7280" font-size="7">  6%</text>
+
+  <!-- Row 7: Logging – 24 -->
+  <rect x="30" y="406" width="940" height="28" rx="2" fill="#111827" fill-opacity="0.2"/>
+  <text x="42" y="424" fill="#9ca3af" font-size="9">CP-7  Logging &amp; Telemetry</text>
+  <text x="230" y="424" fill="#ef4444" font-size="9" font-weight="bold">3</text>
+  <text x="278" y="424" fill="#f59e0b" font-size="9" font-weight="bold">2</text>
+  <text x="326" y="424" fill="#10b981" font-size="9" font-weight="bold">1</text>
+  <text x="374" y="424" fill="#60a5fa" font-size="9" font-weight="bold">4</text>
+  <text x="420" y="424" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="end">24</text>
+  <rect x="510" y="411" width="38" height="14" rx="2" fill="url(#scoreBarGreen)"/>
+  <text x="554" y="422" fill="#6b7280" font-size="7">  4%</text>
+
+  <!-- Total row -->
+  <line x1="30" y1="436" x2="970" y2="436" stroke="#00d4aa" stroke-opacity="0.3" stroke-width="1"/>
+  <rect x="30" y="438" width="940" height="28" rx="2" fill="#001a0e" fill-opacity="0.8"/>
+  <text x="42" y="456" fill="#00d4aa" font-size="9" font-weight="bold">Σ BASE RISK (all stages)</text>
+  <text x="420" y="456" fill="#00d4aa" font-size="11" font-weight="bold" text-anchor="end">562</text>
+  <rect x="510" y="443" width="562" height="14" rx="2" fill="#00d4aa" fill-opacity="0.15" stroke="#00d4aa" stroke-width="0.5"/>
+  <text x="900" y="454" fill="#00d4aa" font-size="7" font-weight="bold">90%</text>
+
+  <!-- ====== SESSION RISK FORMULA ====== -->
+  <rect x="20" y="484" width="580" height="80" rx="5" fill="#0a0e1a" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="38" y="505" fill="#60a5fa" font-size="9" font-weight="bold" letter-spacing="3">SESSION COMPOSITE FORMULA</text>
+  <text x="38" y="530" fill="#ffffff" font-size="13" font-weight="bold">Risk_session = Σ(Risk_stage)</text>
+  <text x="38" y="548" fill="#ffffff" font-size="13" font-weight="bold">              × Context_Multiplier</text>
+  <text x="340" y="540" fill="#4b5563" font-size="9">base: 562</text>
+  <text x="340" y="556" fill="#4b5563" font-size="9">range: 0.5 – 3.0</text>
+
+  <!-- Context multiplier table -->
+  <rect x="620" y="484" width="360" height="80" rx="5" fill="#0a0e1a" stroke="#7c6af0" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="638" y="505" fill="#a78bfa" font-size="9" font-weight="bold" letter-spacing="2">CONTEXT MULTIPLIER SCALE</text>
+  <text x="638" y="524" fill="#4b5563" font-size="8">Anonymous user, external API:     ×</text>
+  <text x="840" y="524" fill="#ef4444" font-size="9" font-weight="bold">3.0</text>
+  <text x="638" y="539" fill="#4b5563" font-size="8">Auth user, elevated permissions:  ×</text>
+  <text x="840" y="539" fill="#f59e0b" font-size="9" font-weight="bold">2.0</text>
+  <text x="638" y="554" fill="#4b5563" font-size="8">Internal employee, standard:      ×</text>
+  <text x="840" y="554" fill="#10b981" font-size="9" font-weight="bold">1.0</text>
+
+  <!-- ====== RISK BUDGET DECISION ENGINE ====== -->
+  <rect x="20" y="582" width="960" height="150" rx="5" fill="#0d1117" stroke="#00d4aa" stroke-width="1.2" stroke-opacity="0.4"/>
+  <text x="38" y="604" fill="#00d4aa" font-size="9" font-weight="bold" letter-spacing="3">RISK BUDGET DECISION ENGINE</text>
+  <line x1="38" y1="608" x2="962" y2="608" stroke="#1f2937" stroke-width="0.5"/>
+
+  <!-- Decision tree horizontal -->
+  <!-- Node: session score -->
+  <rect x="40" y="620" width="130" height="50" rx="4" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="105" y="640" fill="#9ca3af" font-size="8" text-anchor="middle">Risk_session</text>
+  <text x="105" y="656" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">= 1124</text>
+  <text x="105" y="668" fill="#4b5563" font-size="7" text-anchor="middle">(562 × 2.0)</text>
+
+  <!-- Arrow to comparator -->
+  <line x1="170" y1="645" x2="210" y2="645" stroke="#374151" stroke-width="1.5" marker-end="url(#a-grn)"/>
+
+  <!-- Comparator diamond -->
+  <polygon points="250,620 290,645 250,670 210,645" fill="#0a1a10" stroke="#00d4aa" stroke-width="1.2"/>
+  <text x="250" y="641" fill="#00d4aa" font-size="8" text-anchor="middle">Risk</text>
+  <text x="250" y="653" fill="#00d4aa" font-size="8" text-anchor="middle">&gt; Budget</text>
+  <text x="250" y="664" fill="#00d4aa" font-size="7" text-anchor="middle">?</text>
+
+  <!-- YES path — right -->
+  <line x1="290" y1="645" x2="330" y2="645" stroke="#ef4444" stroke-width="1.5" marker-end="url(#a-red)"/>
+  <text x="310" y="638" fill="#ef4444" font-size="8" text-anchor="middle">YES</text>
+  <!-- Escalation actions stack -->
+  <rect x="330" y="612" width="590" height="70" rx="4" fill="#1a0505" stroke="#ef4444" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="350" y="630" fill="#fca5a5" font-size="8" font-weight="bold">ESCALATION TRIGGERED</text>
+  <text x="350" y="648" fill="#ef4444" font-size="8">→  route_to_human_review_queue()</text>
+  <text x="350" y="662" fill="#ef4444" font-size="8">→  suspend_tool_invocation_permissions()</text>
+  <text x="350" y="676" fill="#ef4444" font-size="8">→  flag_session_in_audit_log(immutable=True)</text>
+  <text x="600" y="648" fill="#ef4444" font-size="8">→  notify_oncall_governance()</text>
+  <text x="600" y="662" fill="#ef4444" font-size="8">→  emit_SIEM_alert(severity="CRITICAL")</text>
+  <text x="600" y="676" fill="#ef4444" font-size="8">→  block_session_continuation()</text>
+
+  <!-- NO path — down -->
+  <line x1="250" y1="670" x2="250" y2="700" stroke="#10b981" stroke-width="1.5" marker-end="url(#a-grn)"/>
+  <text x="264" y="690" fill="#10b981" font-size="8">NO</text>
+  <rect x="185" y="702" width="130" height="22" rx="3" fill="#001a0e" stroke="#10b981" stroke-width="0.8"/>
+  <text x="250" y="716" fill="#10b981" font-size="8" text-anchor="middle" font-weight="bold">CONTINUE + LOG</text>
+
+  <!-- Budget reference -->
+  <rect x="40" y="700" width="130" height="22" rx="3" fill="#0a0e1a" stroke="#374151" stroke-width="0.8"/>
+  <text x="105" y="714" fill="#6b7280" font-size="8" text-anchor="middle">Budget = f(trust, scope)</text>
+
+  <!-- ====== DECAY FACTOR note ====== -->
+  <rect x="20" y="746" width="960" height="50" rx="4" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+  <text x="38" y="764" fill="#6b7280" font-size="8" font-weight="bold" letter-spacing="2">TEMPORAL DECAY  —  Risk decays when no further anomalies observed within session window</text>
+  <text x="38" y="782" fill="#4b5563" font-size="8">Risk_session(t) = Risk_session(t₀) × e^(−λt)   where  λ = decay rate,  t = elapsed seconds since last anomaly signal</text>
+  <text x="870" y="782" fill="#374151" font-size="8">range: 0.0 – 1.0</text>
+
+  <!-- Footer -->
+  <line x1="0" y1="844" x2="1000" y2="844" stroke="#00d4aa" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="32" y="856" fill="#374151" font-size="8">AI GOVERNANCE FRAMEWORK · RISK SCORING COMPONENT INTERACTIONS</text>
+  <text x="968" y="856" fill="#374151" font-size="8" text-anchor="end">fig. 3 of 3</text>
+</svg>
